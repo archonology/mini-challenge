@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --grey: rgb(37, 37, 39);
+    --lightgrey: rgb(136, 136, 140);
+    --lightergrey: rgb(183, 183, 189);
+    --light: rgb(253, 246, 236);
+    --dark: rgb(28, 28, 29);
+    --red: rgb(55, 170, 16);
+    --blue: rgb(99, 204, 245);
+    --yellow: rgb(243, 185, 24);
+}
+
+header {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    background-color: var(--grey);
+    color: rgb(253, 246, 236);
+    text-align: center;
+    font-weight: bolder;
+    font-size: 200%;
+}
+
+body {
+    margin: 0;
+    line-height: 1.3;
+    background-image: linear-gradient(
+    var(--red) 0%,
+    var(--grey) 100%);
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    background-color:var(--lightgrey);
+    padding: 5px;
+    margin: 5px;
+    border-width: 2px;
+    text-align: center;
+    box-shadow: 7px 7px 2px 0px;
+
+    transition: color 3s 1s;
+}
+
+.card h2 {
+    font-weight: bolder;
+    font-size: xx-large;
+    border-radius: 2%;
+    background-color: var(--grey);
+    color: var(--light);
+}
+
+.card h5 {
+    font-size: x-large;
+
+}
+
+.inside {
+   padding: 1px;
+   margin: 1px;
+   border-width: 2px;
+   background-color: var(--dark);
+}
+
+.inside pre {
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: var(--light);
+    -moz-user-select: all;
+    -webkit-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+
+    transition: color 2s 1s;
+    transition: font-weight 3s 1s;
+}
+
+footer {
+    text-align: center;
+    color: var(--light);
+    font-weight: bold;
+}
+
+footer h2 [content="with"]::after {
+    content: "❤️";
+    display: inline-block;
+    margin-left: 2px;
+}
+
+.inside pre:hover {
+    color: var(--red);
+}
+
+.card:hover {
+    background-color: var(--lightergrey);
+}
+
+@media screen and (max-width: 768px) {
+   
+    body {
+    background-image: linear-gradient(
+        var(--blue) 0%,
+        var(--dark) 100%);
+   }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+ }
+    .inside pre:hover {
+    color: var(--blue);
+}
+ }
+
+@media screen and (max-width: 700px) {
+    
+    body {
+        background-image: linear-gradient(
+            var(--yellow) 0%,
+            var(--dark) 100%);
+       }
+    
+        .grid {
+            grid-template-columns: repeat(1, 1fr);
+     }
+        .inside pre:hover {
+        color: var(--yellow);
+    }
+
+}
+    
+    
